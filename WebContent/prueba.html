@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="images/oyuoIcono.ico" />
+<title>Probando Angular JS</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+
+<script src="js/jquery-1.12.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="lib/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-route.min.js"></script>
+<script type="text/javascript" src="controladores/paisesCtlr.js"></script>
+
+<body ng-app="paises">
+
+<div ng-controller="paisesCtrl">
+<table align="center">
+<tr>
+<th align ="center"><h1>Equipos mas ganadores.</h1></th>
+</tr>
+<tr>
+<td><strong> Buscar:</strong> <input type="text" ng-model="buscador"> </td>
+</tr>
+<tr>
+<td><a href="" ng-click="orden = 'Nombre'; reverse = !reverse">Nombre equipo.</a></td>
+<td><a href="" ng-click="orden = 'Titulos'; reverse = !reverse">Titulos.</a></td>
+</tr>
+<tr ng-repeat="pais in paises | orderBy:orden:reverse | filter:buscador">
+<td><strong>{{pais.nombre}}</strong></td>
+<td>{{pais.titulos}}</td>
+<td><img ng-src="{{pais.urlImagen}}" width="150" height="150"></td>
+</tr>
+
+</table>
+<div class="row">
+      <div class="col-md-3">
+      </div>
+<div class="col-md-9">
+<p>Quiere ver pelis ?....</p>
+<p><a href="movies.html"><img src="images/oyuo.jpg"> </a></p>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>

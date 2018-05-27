@@ -1,0 +1,35 @@
+[{
+"Nombre": "Colo-Colo", 
+"Titulos" : "30",
+"urlImagen" : "images/colo.jpg"
+},
+{
+"Nombre": "U. De Chile", 
+"Titulos" : "15",
+"urlImagen" : "images/u.png"
+},
+{
+"Nombre": "U. Catolica",
+"Titulos" : "11",
+"urlImagen" : "images/catolica.gif" 
+},
+{
+"Nombre": "Wanderers", 
+"Titulos" : "2",
+"urlImagen" : "images/wander.png" 
+},
+{
+"Nombre": "Everton", 
+"Titulos" : "3",
+"urlImagen" : "images/everton.jpg" 
+},
+{
+"Nombre": "Cobreloa", 
+"Titulos" : "8",
+"urlImagen" : "images/cobreloa.png" 
+},
+{
+"Nombre": "Ohiggins", 
+"Titulos" : "1",
+"urlImagen" : "images/ohhigins.jpg" 
+}]
