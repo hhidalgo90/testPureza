@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//Se agrega FormsModule para poder usar ngModel en la vista
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TestPurezaComponent } from './test-pureza/test-pureza.component';
@@ -10,7 +12,8 @@ import { TestPurezaComponent } from './test-pureza/test-pureza.component';
     TestPurezaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

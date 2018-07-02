@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Preguntas} from '../clases/preguntas';
+import {PREGUNTAS} from '../clases/mock-preguntas';
+import {ObtenerPreguntasService} from '../services/obtener-preguntas.service';
+import { Pregunta } from '../clases/pregunta';
 
 @Component({
   selector: 'app-test-pureza',
@@ -7,15 +9,20 @@ import {Preguntas} from '../clases/preguntas';
   styleUrls: ['./test-pureza.component.css']
 })
 export class TestPurezaComponent implements OnInit {
+  titulo = 'inicio test pureza';
 
-  preguntas : Preguntas = {
-    id: 1,
-    glosa: 'Glosa de la pregunta'
-  };
 
-  constructor() { }
+  preguntas : Pregunta[];
+
+
+  constructor(private obtenerPreguntasService : ObtenerPreguntasService ) { }
+
+  getPreguntas(): void{
+    this.obtenerPreguntasService.getPreguntas().subscribe(preguntas=>this.preguntas = preguntas);
+  }
 
   ngOnInit() {
+    this.getPreguntas();
   }
 
 }

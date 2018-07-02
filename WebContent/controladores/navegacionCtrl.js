@@ -1,26 +1,31 @@
 /**
  * 
  */
+var app = angular.module("testPurezaApp", ['ngRoute']);
 
-var navegar = angular.module("navegacion", ['ngRoute']);
-
-navegar.config(function($routeProvider) {
-	$routeProvider.when('/', {
-	templateUrl:'prueba.html',
-	controler: 'paisesCtrl'
-	}).
-	$routeProvider.when('/chupalo', {
-		templateUrl:'prueba.html',
-		controler: 'paisesCtrl'
-		}).
-	otherwise({
-		redirecTo: '/'
+app.config(function($routeProvider,$locationProvider) {
+	$routeProvider
+	.when('/', {
+	templateUrl:'pages/portada.html',
+	controler: 'HomeController',
+	})
+	.when('/prueba', {
+		templateUrl:'pages/prueba.html',
+		controler: 'HomeController',
+		})
+	.otherwise({
+		redirecTo: '/portada.html'
 	});
 });
 
-navegar.controller("paisesCtrl", function($scope, $http) {
+app.controller("paisesCtrl", function($scope, $http) {
 	$http.get("json/paises.json").success(function(data){
 		$scope.paises = data;
 	});
 	
+});
+
+app.controller('HomeController', function($scope) {
+  $scope.message = 'Hello from HomeController';
+  console.log($scope.message);
 });
