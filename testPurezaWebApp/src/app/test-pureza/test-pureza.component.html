@@ -1,11 +1,9 @@
-<table class="table" align="center">
-<h1>{{titulo | uppercase}}</h1>
-<ul *ngFor="let pregunta of preguntas">
-
-<li (click)="seleccionarPregunta(pregunta)"><h1> Id Pregunta: {{pregunta.id}}</h1></li>
-<li><h1> Glosa pregunta: {{pregunta.glosa}}</h1></li>
-<li><h1>Opciones:</h1></li>
-<li *ngFor="let opcion of pregunta.opciones"><h2>{{opcion}}</h2></li>
-
-</ul>
-</table>
+<div *ngFor="let pregunta of preguntas">
+<span class="label label-default">{{pregunta.id}} ) {{pregunta.glosa}}</span>
+<div *ngFor="let opcion of pregunta.opciones" class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="optradio">{{opcion}}
+  </label>
+</div>
+</div>
+<button (click)="goBack()">Volver</button>
