@@ -1,6 +1,7 @@
 package com.testPureza.rest;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -24,7 +25,7 @@ public class TestPurezaWS extends TestPureza{
 	
 	final static Logger logger = Logger.getLogger(TestPurezaWS.class);
 
-	@POST
+	@GET
     @Path("obtenerPreguntas")
     @Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
 	public PreguntaTO[] obtenerPreguntas() {

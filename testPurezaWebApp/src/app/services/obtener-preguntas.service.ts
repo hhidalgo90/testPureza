@@ -4,13 +4,17 @@ import {PREGUNTAS} from '../clases/mock-preguntas';
 import { Observable, of } from 'rxjs';
 import { MessageService } from '../services/message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';//Cliente http
+<<<<<<< HEAD
 import { catchError, map, tap } from 'rxjs/operators'; // Para capturar errores desde el servidor
+=======
+>>>>>>> 220ff1fb1f4a0439a2a747fbe7477172576533e0
 
 @Injectable({
   providedIn: 'root'
 })
 export class ObtenerPreguntasService {
 
+<<<<<<< HEAD
   private preguntasUrl = 'http://localhost:8080/testPurezaWeb/rest/testPureza/obtenerPreguntas';  // URL to web api
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
@@ -19,6 +23,13 @@ export class ObtenerPreguntasService {
       tap(preguntas => this.log(`preguntas obtenidas`)),
       catchError(this.handleError('getPreguntas', []))
     );
+=======
+  private preguntasUrl = 'api/preguntas';  // URL to web api
+  constructor(private http: HttpClient, private messageService: MessageService) { }
+
+  getPreguntas(): Observable<Pregunta[]> {
+    return this.http.get<Pregunta[]>(this.preguntasUrl)
+>>>>>>> 220ff1fb1f4a0439a2a747fbe7477172576533e0
   }
 
 
@@ -26,6 +37,7 @@ export class ObtenerPreguntasService {
   private log(message: string) {
     this.messageService.add('Obtener-preguntas-service: ' + message);
   }
+<<<<<<< HEAD
 
 
   /**
@@ -47,4 +59,6 @@ private handleError<T> (operation = 'operation', result?: T) {
     return of(result as T);
   };
 }
+=======
+>>>>>>> 220ff1fb1f4a0439a2a747fbe7477172576533e0
 }
