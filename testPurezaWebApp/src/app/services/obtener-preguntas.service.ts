@@ -25,7 +25,8 @@ export class ObtenerPreguntasService {
     return this.http.get<Pregunta[]>(this.preguntasUrl).pipe(
       tap(preguntas => this.log(`preguntas obtenidas`)),
       catchError(this.handleError('getPreguntas', []))
-    ); 
+    );
+  }
 
   /**
  * Handle Http operation that failed.
