@@ -21,23 +21,13 @@ import { InMemoryDataService }  from './in-memory-data.service';
     TestPurezaComponent,
     MessagesComponent,
     InicioTestPurezaComponent
-  ],
+  ], 
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     AlertModule.forRoot(),
-<<<<<<< HEAD
     HttpClientModule
-=======
-    HttpClientModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-// and returns simulated server responses.
-// Remove it when a real server is ready to receive requests.
-  HttpClientInMemoryWebApiModule.forRoot(
-  InMemoryDataService, { dataEncapsulation: false }
-  )
->>>>>>> 220ff1fb1f4a0439a2a747fbe7477172576533e0
   ],
   providers: [],
   bootstrap: [AppComponent]
