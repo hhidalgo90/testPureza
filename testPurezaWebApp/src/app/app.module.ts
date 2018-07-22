@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {  HttpClientModule } from '@angular/common/http'; //Import para usar httpClient en toda la app
 //Se agrega FormsModule para poder usar ngModel en la vista
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertModule } from 'ngx-bootstrap'; //Import para bootstrap
 import { AppRoutingModule } from './/app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,10 +21,11 @@ import { InMemoryDataService }  from './in-memory-data.service';
     TestPurezaComponent,
     MessagesComponent,
     InicioTestPurezaComponent
-  ], 
+  ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AlertModule.forRoot(),
     HttpClientModule

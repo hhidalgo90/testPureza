@@ -1,9 +1,12 @@
+ <form>
 <div *ngFor="let pregunta of preguntas">
 <span class="label label-default">{{pregunta.id}} ) {{pregunta.glosa}}</span>
 <div *ngFor="let opcion of pregunta.opciones" class="form-check">
   <label class="form-check-label">
-    <input type="radio" class="form-check-input" name="optradio">{{opcion}}
+    <input type="radio" class="form-check-input" value="{{opcion}}" name="{{pregunta.id}}" [formControl]="name">{{opcion}}
   </label>
 </div>
 </div>
+<button (click)="guardarRespuestas(preguntas)">Guardar respuestas</button>
+</form>
 <button (click)="goBack()">Volver</button>

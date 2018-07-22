@@ -1,6 +1,7 @@
 package com.testPureza.rest;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -54,5 +55,16 @@ public class TestPurezaWS extends TestPureza{
 		}
 		return preguntas;
 		
+	}
+	
+	@POST
+    @Path("recibirRespuestas")
+	@Consumes(MediaType.APPLICATION_JSON + "; charset=UTF-8")
+    @Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
+	public String recibirRespuestas(PreguntaTO preguntas){
+		if(logger.isDebugEnabled()){
+		    logger.debug("(recibirRespuestas) Inicio, Preguntas: " + preguntas.toString());
+		}
+		return "";
 	}
 }
