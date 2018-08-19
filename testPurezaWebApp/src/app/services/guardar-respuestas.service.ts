@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators'; // Para capturar errores 
 //constantes van afuera de la declaracion de la clase.
 const cabecera = {
 headers: new HttpHeaders({
-  'Content-Type':  'application/json'
+  'Content-Type':'application/json'
 })
 };
 
@@ -34,8 +34,9 @@ export class GuardarRespuestasService {
 //Recibe parametro llamado respuestas pero que son del mismo tipo que las preguntas, se usa la misma clase para persistir datos.
 //Pregunta[] es el parametro de entrada y RespuestaServidor[] es la salida desde el servidor.
   guardarRespuestas(respuestas : Pregunta[]): Observable<RespuestaServidor[]> {
+  console.log("Respuestas a enviar: " + respuestas);
     return this.http.post<RespuestaServidor[]>(this.preguntasUrl, respuestas, cabecera).pipe(
-      tap(preguntas => this.log(`Respuestas guardadas con exito!`)),
+      tap(preguntas => this.log('Respuestas guardadas con exito!')),
       catchError(this.handleError('guardarRespuestas', []))
     );
   }

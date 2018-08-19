@@ -36,7 +36,7 @@ export class TestPurezaComponent implements OnInit {
 //En el subscribe this.respuestaServer es el tipo de retorno del metodo, y se le puede asignar cualquier nombre, en este caso respuesta.
   guardarRespuestas(){
   console.log("llegue a guardarRespuestas: respuestas " + this.preguntas.values);
-    return  this.guardarRespuestasService.guardarRespuestas(this.preguntas).subscribe(respuesta=>this.respuestaServer = respuesta);
+    return  this.guardarRespuestasService.guardarRespuestas(this.preguntas).subscribe(respuestaServer=>this.respuestaServer);
   }
 
   //Volver atras
