@@ -1,7 +1,14 @@
 package com.testPureza.model;
 
-public class PreguntaTO {
+import java.io.Serializable;
+import java.util.Arrays;
 
+public class PreguntaTO implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long id;
 	private String glosa;
 	private String[] opciones;
@@ -22,6 +29,14 @@ public class PreguntaTO {
 	}
 	public void setOpciones(String[] opciones) {
 		this.opciones = opciones;
+	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("PreguntaTO [id=").append(id).append(", glosa=")
+				.append(glosa).append(", opciones=")
+				.append(Arrays.toString(opciones)).append("]");
+		return builder.toString();
 	}
 	
 	
