@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 
 import com.testPureza.business.PurezaBusiness;
 import com.testPureza.model.PreguntaTO;
+import com.testPureza.model.RespuestaServidor;
 
 @Path("/testPureza")
 public class TestPurezaWS extends TestPureza{
@@ -61,10 +62,13 @@ public class TestPurezaWS extends TestPureza{
     @Path("recibirRespuestas")
 	@Consumes(MediaType.APPLICATION_JSON + "; charset=UTF-8")
     @Produces(MediaType.APPLICATION_JSON + "; charset=UTF-8")
-	public String recibirRespuestas(PreguntaTO preguntas){
+	public RespuestaServidor[] recibirRespuestas(PreguntaTO[] preguntas){
 		if(logger.isDebugEnabled()){
 		    logger.debug("(recibirRespuestas) Inicio, Preguntas: " + preguntas.toString());
 		}
-		return "";
+		RespuestaServidor[] respuestas = new RespuestaServidor[1];
+		respuestas[0] = new RespuestaServidor();
+		respuestas[0].setRespuesta("");
+		return respuestas;
 	}
 }
