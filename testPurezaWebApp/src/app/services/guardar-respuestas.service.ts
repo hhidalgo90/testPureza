@@ -20,6 +20,7 @@ headers: new HttpHeaders({
 export class GuardarRespuestasService {
 
   private preguntasUrl = 'http://localhost:8080/testPurezaWeb/rest/testPureza/recibirRespuestas';  // URL to web api
+  private json = '';
 
 
 
@@ -35,7 +36,10 @@ export class GuardarRespuestasService {
 //Pregunta[] es el parametro de entrada y RespuestaServidor[] es la salida desde el servidor.
   guardarRespuestas(respuestas : Pregunta[]): Observable<RespuestaServidor[]> {
   console.log("Respuestas a enviar: " + respuestas);
-    return this.http.post<RespuestaServidor[]>(this.preguntasUrl, respuestas, cabecera).pipe(
+  console.log("Respuestas en String: " + JSON.stringify(respuestas));
+  console.log("Respuestas en Json: " + JSON.parse(JSON.stringify(respuestas)));
+  this.json = JSON.stringify(respuestas);
+    return this.http.post<RespuestaServidor[]>(this.preguntasUrl, this.json, cabecera).pipe(
       tap(preguntas => this.log('Respuestas guardadas con exito!')),
       catchError(this.handleError('guardarRespuestas', []))
     );
