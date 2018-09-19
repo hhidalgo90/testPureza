@@ -39,7 +39,7 @@ export class GuardarRespuestasService {
   console.log("Respuestas en String: " + JSON.stringify(respuestas));
   console.log("Respuestas en Json: " + JSON.parse(JSON.stringify(respuestas)));
   this.json = JSON.stringify(respuestas);
-    return this.http.post<RespuestaServidor[]>(this.preguntasUrl, this.json, cabecera).pipe(
+    return this.http.post<RespuestaServidor[]>(this.preguntasUrl, JSON.stringify(respuestas), cabecera).pipe(
       tap(preguntas => this.log('Respuestas guardadas con exito!')),
       catchError(this.handleError('guardarRespuestas', []))
     );
