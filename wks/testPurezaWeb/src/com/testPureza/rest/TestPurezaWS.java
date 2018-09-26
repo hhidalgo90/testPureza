@@ -48,8 +48,8 @@ public class TestPurezaWS extends TestPureza{
 		preguntas[1] = new PreguntaTO();
 		preguntas[1].setId(1);
 		preguntas[1].setGlosa("Por que el fernando es tan caballo");
-		opciones[0] = "A";
-		opciones[1] = "B";
+		opciones[0] = "C";
+		opciones[1] = "D";
 		preguntas[1].setOpciones(opciones);
 		if(logger.isDebugEnabled()){
 		    logger.debug("(obtenerPreguntas) Fin");

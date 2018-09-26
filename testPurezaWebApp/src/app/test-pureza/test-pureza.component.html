@@ -3,7 +3,7 @@
 <span class="label label-default">{{pregunta.id}} ) {{pregunta.glosa}}</span>
 <div *ngFor="let opcion of pregunta.opciones" class="form-check">
   <label class="form-check-label">
-    <input type="radio" class="form-check-input" value="{{opcion}}" name="{{pregunta.id}}" [formControl]="name">{{opcion}}
+    <input type="radio" class="form-check-input" value="{{opcion}}" name="{{pregunta.id}}" [(ngModel)]="pregunta.respuesta">{{opcion}}
   </label>
 </div>
 </div>

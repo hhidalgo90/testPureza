@@ -12,6 +12,7 @@ public class PreguntaTO implements Serializable{
 	private long id;
 	private String glosa;
 	private String[] opciones;
+	private String respuesta;
 	public long getId() {
 		return id;
 	}
@@ -30,14 +31,27 @@ public class PreguntaTO implements Serializable{
 	public void setOpciones(String[] opciones) {
 		this.opciones = opciones;
 	}
+	public String getRespuesta() {
+		return respuesta;
+	}
+	public void setRespuesta(String respuesta) {
+		this.respuesta = respuesta;
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("PreguntaTO [id=").append(id).append(", glosa=")
-				.append(glosa).append(", opciones=")
-				.append(Arrays.toString(opciones)).append("]");
+		builder.append("PreguntaTO [id=");
+		builder.append(id);
+		builder.append(", glosa=");
+		builder.append(glosa);
+		builder.append(", opciones=");
+		builder.append(Arrays.toString(opciones));
+		builder.append(", respuesta=");
+		builder.append(respuesta);
+		builder.append("]");
 		return builder.toString();
 	}
+
 	
 	
 }
