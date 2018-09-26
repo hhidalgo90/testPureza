@@ -1,6 +1,5 @@
 package com.testPureza.rest;
 
-import javax.annotation.security.PermitAll;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -59,7 +58,6 @@ public class TestPurezaWS extends TestPureza{
 		
 	}
 	
-	@PermitAll
 	@POST
     @Path("recibirRespuestas")
 	@Consumes(MediaType.APPLICATION_JSON + "; charset=UTF-8")
