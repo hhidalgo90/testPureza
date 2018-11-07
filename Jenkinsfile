@@ -1,6 +1,6 @@
 node {
         stage('Descarga fuentes') { 
-			git 'https://github.com/hhidalgo90/testPureza/tree/master/wks'
+			git 'https://github.com/hhidalgo90/testPureza.git'
         }
 		
 		stage('Compilar proyecto Maven') { 
