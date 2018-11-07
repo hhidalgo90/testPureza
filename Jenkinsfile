@@ -1,15 +1,9 @@
-pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine' 
-            args '-v /root/.m2:/root/.m2' 
+node {
+        stage('Descarga fuentes') { 
+			git 'https://github.com/hhidalgo90/testPureza.git'
         }
-    }
-    stages {
-        stage('Build') { 
-            steps {
-                bat 'mvn -B -DskipTests clean package' 
-            }
+		
+		stage('Compilar proyecto Maven') { 
+			bat 'mvn package'
         }
-    }
 }
